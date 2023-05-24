@@ -1,7 +1,15 @@
 <mvc:View controllerName="firstapp.firstmodule.controller.firstView"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+    xmlns="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m">
+   
+    <m:Page id="page" title="{i18n>title}">
+ 
+    <m:content>
+    
+    <m:VBox id= "vbox1"> <m:Text  text="{i18n>text1}"></m:Text></m:VBox>
+	</m:content>
+    </m:Page>
 </mvc:View>
