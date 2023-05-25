@@ -9,7 +9,7 @@
  
     <m:content>
     
-    <m:VBox id= "vbox1"> <m:Text  text="{i18n>text1}"></m:Text></m:VBox>
+    <m:VBox id= "vbox1"> <m:Text id= 'text1' text="{i18n>text1}"></m:Text></m:VBox>
 	</m:content>
     </m:Page>
 </mvc:View>
