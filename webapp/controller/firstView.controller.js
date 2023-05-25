@@ -51,8 +51,9 @@ sap.ui.define([
                             })
                         });
                         var vBox = this.getView().byId('vbox1');
-                       oTable.placeAt("content", "first");     
-                                         
+                       oTable.placeAt("content");     
+                                   
+                  
 
                     }.bind(this)
 
