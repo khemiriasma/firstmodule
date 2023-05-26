@@ -1,15 +1,63 @@
-<mvc:View controllerName="firstapp.firstmodule.controller.firstView"
+<mvc:View xmlns:filterbar="sap.ui.comp.filterbar" controllerName="firstapp.firstmodule.controller.firstView"
     xmlns="sap.ui.table"
     xmlns:mvc="sap.ui.core.mvc"
 	xmlns:u="sap.ui.unified"
 	xmlns:c="sap.ui.core"
-	xmlns:m="sap.m">
-   
-    <m:Page id="page" title="{i18n>title}">
- 
-    <m:content>
-    
-    <m:VBox id= "vbox1"> <m:Text id= 'text1' text="{i18n>text1}"></m:Text></m:VBox>
+	xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f">
+
+    <!-- <m:Page id="page" title="{i18n>title}">    
+     <m:content >
+      <m:Text id= 'text1' text="{i18n>text1}"></m:Text>
 	</m:content>
-    </m:Page>
+    </m:Page> -->
+
+    <f:DynamicPage showFooter="false" id="ObjectPageLayout" headerExpanded="true" class="sapUiSizeCompact sapUiNoContentPadding">
+<f:title>
+			<f:DynamicPageTitle id ="DynamicPageTitle" backgroundDesign="Transparent">
+				<f:heading>
+					<m:Title id="idtitle" text="{i18n>Title}" tooltip="{i18n>Title}"/>
+				</f:heading>
+				
+			</f:DynamicPageTitle>
+		</f:title>
+        <f:header>
+			<f:DynamicPageHeader pinnable="true"  id="idHeader">
+				<f:content >
+					
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+        <f:content >
+        <m:Table id="idTable" sticky="HeaderToolbar,InfoToolbar,ColumnHeaders" growing="true" growingThreshold="10" growingScrollToLoad="true"
+					busyIndicatorDelay="30" width="100%" items="{path:'/EmployeSet'}" updateFinished="onUpdateFinished"
+				    class="sapUiSizeCompact stickyToolbar sapUiNoContentPadding">
+					<m:columns class=" sapUiSizeCompact stickyToolbar">
+						<m:Column id="EmplId" minScreenWidth="" >
+                            <m:Label text="{i18n>EmplID}" tooltip="{i18n>EmplID}"/>
+						</m:Column>
+                        <m:Column id="firstName" minScreenWidth="" >                         
+							<m:Label text="{i18n>firstNameLabel}" tooltip="{i18n>firstNameLabel}"/>                      
+						</m:Column>
+                        <m:Column id="LastName" minScreenWidth="" >                         
+                            <m:Label text="{i18n>lastNameLabel}" tooltip="{i18n>LastNameLabel}"/>
+						</m:Column>
+                         <m:Column id="birthday" minScreenWidth="" >                         
+                            <m:Label text="{i18n>birthdayLabel}"  tooltip="{i18n>birthdayLabel}"/>
+						</m:Column>
+                        </m:columns>
+					<m:items  class=" sapUiSizeCompact">
+						<m:ColumnListItem type="Navigation" press="onEmplPress" selected="true" >
+							<m:cells>
+								<m:ObjectIdentifier Id ='ObjectIdentifier' title="{Id}"  />
+								<m:Text  text="{Firstname}"  />
+                                <m:Text text="{Lastname}" />
+                                <m:Text text= "{path: 'Datebirth', formatter: '.formatter.getDate'}" />
+                                </m:cells>
+						</m:ColumnListItem>
+					</m:items>
+				</m:Table>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>
