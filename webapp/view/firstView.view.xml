@@ -46,6 +46,9 @@
                          <m:Column id="birthday" minScreenWidth="" >                         
                             <m:Label text="{i18n>birthdayLabel}"  tooltip="{i18n>birthdayLabel}"/>
 						</m:Column>
+						<m:Column id="testcol" minScreenWidth="" >                         
+                            <m:Label text="testcol"  tooltip="testcol"/>
+						</m:Column>
                         </m:columns>
 					<m:items  class=" sapUiSizeCompact">
 						<m:ColumnListItem type="Navigation" press="onEmplPress" selected="true" >
